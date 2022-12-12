@@ -27,6 +27,7 @@ body {
 
 .content {
     background: radial-gradient(#2b3760, #0b1023);
+    overflow: hidden;
     height: 100vh;
 }
 
@@ -41,13 +42,18 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    overflow: hidden;
     position: absolute;
     width: 100%;
     left: 0;
     opacity: 1;
     
 }
+
+.picture {
+  display: none;
+}
+
+
 
 .page {
     display: flex;
@@ -81,6 +87,10 @@ body {
   
 .author__photos {
     display: flex;
+}
+
+.auto {
+  overflow: auto;
 }
   
 .photo__item {
@@ -388,6 +398,19 @@ body {
 
 
 
+.poem {
+  display: flex;
+}
+
+.w50 {
+  width: 50%;
+}
+
+
+.nuralimg {
+  width: 80%;
+}
+
 
 @media screen and (max-width: 1300px) {
   .container{
@@ -473,10 +496,10 @@ body {
 }
 
 @media screen and (max-width: 560px) {
-  .container{
-    max-width: 90%;
-    padding: 0 20px;
-  }
+    .container{
+      max-width: 90%;
+      padding: 0 20px;
+    }
     .author__name {
         font-size: 80px;
         line-height: 70px;
