@@ -1,0 +1,495 @@
+@import 'mistral.css';
+@font-face {
+    font-family: Cyber;
+    src: url("https://assets.codepen.io/605876/Blender-Pro-Bold.otf");
+    font-display: swap;
+  }
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: MistralRegular;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+/*=========content========*/
+
+.content {
+    background: radial-gradient(#2b3760, #0b1023);
+    height: 100vh;
+}
+
+.container {
+    max-width: 1280px;
+    padding: 0 15px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.pages {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    opacity: 1;
+    
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+}
+  
+.page:first-child {
+    opacity: 0;
+}
+  
+.author__name {
+    width: 100%;
+    font-size: 200px;
+    font-family: MistralRegular;
+    color: #fe75fe;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    line-height: 140px;
+}
+  
+.author__photos {
+    display: flex;
+}
+  
+.photo__item {
+    width: 400px;
+    height: auto;
+}
+  
+.photo__item img {
+    display: block;
+    width: 100%;
+}
+  
+.photo__item:first-child {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    filter: brightness(40%);
+}
+  
+.photo__item:nth-child(2) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    transform: translate(-50%, -50%);
+    width: 500px;
+}
+
+.photo__item:nth-child(2) img {
+    transition: all .3s linear;
+    filter: brightness(40%);
+}
+
+.photo__item:nth-child(2) img:hover {
+    transform: scale(1.05);
+    transition: all .3s linear;
+    filter: brightness(100%);
+}
+
+  
+.photo__item:last-child {
+    position: absolute;
+    top: 30%;
+    right: 50%;
+    transform: translateX(50%);
+    opacity: 0;
+    filter: brightness(40%);
+}
+
+.page__title {
+    width: 100%;
+    font-size: 100px;
+    font-family: MistralRegular;
+    color: #fe75fe;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 3;
+    display: inline-block;
+    line-height: 80px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.btn {
+    display: inline-block;
+    z-index: 3;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    cursor: pointer;
+    width: 300px;
+}
+
+.btn:hover {
+    opacity: .7;
+}
+
+
+.cybr-btn {
+    --primary: hsl(var(--primary-hue), 85%, calc(var(--primary-lightness, 50) * 1%));
+    --shadow-primary: hsl(var(--shadow-primary-hue), 90%, 50%);
+    --primary-hue: 0;
+    --primary-lightness: 50;
+    --color: hsl(0, 0%, 100%);
+    --font-size: 26px;
+    --shadow-primary-hue: 180;
+    --label-size: 9px;
+    --shadow-secondary-hue: 60;
+    --shadow-secondary: hsl(var(--shadow-secondary-hue), 90%, 60%);
+    --clip: polygon(0 0, 100% 0, 100% 100%, 95% 100%, 95% 90%, 85% 90%, 85% 100%, 8% 100%, 0 70%);
+    --border: 4px;
+    --shimmy-distance: 5;
+    --clip-one: polygon(0 2%, 100% 2%, 100% 95%, 95% 95%, 95% 90%, 85% 90%, 85% 95%, 8% 95%, 0 70%);
+    --clip-two: polygon(0 78%, 100% 78%, 100% 100%, 95% 100%, 95% 90%, 85% 90%, 85% 100%, 8% 100%, 0 78%);
+    --clip-three: polygon(0 44%, 100% 44%, 100% 54%, 95% 54%, 95% 54%, 85% 54%, 85% 54%, 8% 54%, 0 54%);
+    --clip-four: polygon(0 0, 100% 0, 100% 0, 95% 0, 95% 0, 85% 0, 85% 0, 8% 0, 0 0);
+    --clip-five: polygon(0 0, 100% 0, 100% 0, 95% 0, 95% 0, 85% 0, 85% 0, 8% 0, 0 0);
+    --clip-six: polygon(0 40%, 100% 40%, 100% 85%, 95% 85%, 95% 85%, 85% 85%, 85% 85%, 8% 85%, 0 70%);
+    --clip-seven: polygon(0 63%, 100% 63%, 100% 80%, 95% 80%, 95% 80%, 85% 80%, 85% 80%, 8% 80%, 0 70%);
+    font-family: 'Cyber', sans-serif;
+    color: var(--color);
+    cursor: pointer;
+    background: transparent;
+    text-transform: uppercase;
+    font-size: var(--font-size);
+    outline: transparent;
+    letter-spacing: 2px;
+    position: relative;
+    font-weight: 700;
+    border: 0;
+    min-width: 300px;
+    height: 75px;
+    line-height: 75px;
+    transition: background 0.2s ease-in-out;
+  }
+  
+  .cybr-btn:hover {
+    --primary: hsl(var(--primary-hue), 85%, calc(var(--primary-lightness, 50) * 0.8%));
+  }
+  .cybr-btn:active {
+    --primary: hsl(var(--primary-hue), 85%, calc(var(--primary-lightness, 50) * 0.6%));
+  }
+  
+  .cybr-btn:after,
+  .cybr-btn:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    clip-path: var(--clip);
+    z-index: -1;
+  }
+  
+  .cybr-btn:before {
+    background: var(--shadow-primary);
+    transform: translate(var(--border), 0);
+  }
+  
+  .cybr-btn:after {
+    background: var(--primary);
+  }
+  
+  .cybr-btn__tag {
+    position: absolute;
+    padding: 1px 4px;
+    letter-spacing: 1px;
+    line-height: 1;
+    bottom: -5%;
+    right: 5%;
+    font-weight: normal;
+    color: hsl(0, 0%, 0%);
+    font-size: var(--label-size);
+  }
+  
+  .cybr-btn__glitch {
+    position: absolute;
+    top: calc(var(--border) * -1);
+    left: calc(var(--border) * -1);
+    right: calc(var(--border) * -1);
+    bottom: calc(var(--border) * -1);
+    background: var(--shadow-primary);
+    text-shadow: 2px 2px var(--shadow-primary), -2px -2px var(--shadow-secondary);
+    clip-path: var(--clip);
+    animation: glitch 2s infinite;
+    display: none;
+  }
+  
+  .cybr-btn:hover .cybr-btn__glitch {
+    display: block;
+  }
+  
+  .cybr-btn__glitch:before {
+    content: '';
+    position: absolute;
+    top: calc(var(--border) * 1);
+    right: calc(var(--border) * 1);
+    bottom: calc(var(--border) * 1);
+    left: calc(var(--border) * 1);
+    clip-path: var(--clip);
+    background: var(--primary);
+    z-index: -1;
+  }
+  
+  @keyframes glitch {
+    0% {
+      clip-path: var(--clip-one);
+    }
+    2%, 8% {
+      clip-path: var(--clip-two);
+      transform: translate(calc(var(--shimmy-distance) * -1%), 0);
+    }
+    6% {
+      clip-path: var(--clip-two);
+      transform: translate(calc(var(--shimmy-distance) * 1%), 0);
+    }
+    9% {
+      clip-path: var(--clip-two);
+      transform: translate(0, 0);
+    }
+    10% {
+      clip-path: var(--clip-three);
+      transform: translate(calc(var(--shimmy-distance) * 1%), 0);
+    }
+    13% {
+      clip-path: var(--clip-three);
+      transform: translate(0, 0);
+    }
+    14%, 21% {
+      clip-path: var(--clip-four);
+      transform: translate(calc(var(--shimmy-distance) * 1%), 0);
+    }
+    25% {
+      clip-path: var(--clip-five);
+      transform: translate(calc(var(--shimmy-distance) * 1%), 0);
+    }
+    30% {
+      clip-path: var(--clip-five);
+      transform: translate(calc(var(--shimmy-distance) * -1%), 0);
+    }
+    35%, 45% {
+      clip-path: var(--clip-six);
+      transform: translate(calc(var(--shimmy-distance) * -1%));
+    }
+    40% {
+      clip-path: var(--clip-six);
+      transform: translate(calc(var(--shimmy-distance) * 1%));
+    }
+    50% {
+      clip-path: var(--clip-six);
+      transform: translate(0, 0);
+    }
+    55% {
+      clip-path: var(--clip-seven);
+      transform: translate(calc(var(--shimmy-distance) * 1%), 0);
+    }
+    60% {
+      clip-path: var(--clip-seven);
+      transform: translate(0, 0);
+    }
+    31%, 61%, 100% {
+      clip-path: var(--clip-four);
+    }
+  }
+  
+  .cybr-btn:nth-of-type(2) {
+    --primary-hue: 260;
+  }
+
+
+
+
+
+/**/
+
+.title {
+  font-size: 80px;
+  font-family: MistralRegular;
+  color: #fe75fe;
+  margin: 40px 0;
+  text-align: center;
+}
+/**/
+  
+
+.poems {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.poem {
+  display: inline-block;
+  background: #00b8ff;
+  padding: 10px 18px;
+  border-radius: 14px;
+}
+
+.poem__title {
+  font-size: 36px;
+  color: 	#001eff;
+  margin-bottom: 5px;
+}
+
+.poem__author {
+  color: #001eff;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.poem__text {
+  color: #001eff;
+  font-size: 26px;
+  line-height: 24px;
+}
+
+
+
+
+@media screen and (max-width: 1300px) {
+  .container{
+    max-width: 1080px;
+  }
+}
+
+
+@media screen and (max-width: 1100px) {
+  .container{
+    max-width: 900px;
+  }
+}
+
+
+
+@media screen and (max-width:1024px) {
+    .author__name {
+        font-size: 150px;
+        line-height: 140px;
+    }
+
+    .photo__item {
+        width: 300px;
+    }
+    .photo__item:nth-child(2) {
+        width: 360px;
+    }
+    
+    .page__title {
+      font-size: 100px;
+      line-height: 90px;
+    }
+}
+
+@media screen and (max-width: 980px) {
+  .container{
+    max-width: 750px;
+  }
+}
+
+
+@media screen and (max-width:768px) {
+  .container{
+    max-width: 650px;
+  }
+    .author__name {
+        font-size: 100px;
+        line-height: 95px;
+    }
+
+    .photo__item {
+        width: 200px;
+    }
+    .photo__item:nth-child(2) {
+        width: 300px;
+    }
+    .page__title {
+      font-size: 80px;
+      line-height: 70px;
+    }
+}
+
+@media screen and (max-width: 670px) {
+  .container{
+    max-width: 540px;
+  }
+    .author__name {
+        font-size: 90px;
+        line-height: 85px;
+    }
+
+    .photo__item {
+        width: 200px;
+    }
+    .photo__item:nth-child(2) {
+        width: 300px;
+    }
+    .page__title {
+      font-size: 70px;
+      line-height: 60px;
+    }
+}
+
+@media screen and (max-width: 560px) {
+  .container{
+    max-width: 90%;
+    padding: 0 20px;
+  }
+    .author__name {
+        font-size: 80px;
+        line-height: 70px;
+    }
+
+    .photo__item {
+        width: 180px;
+    }
+    .photo__item:nth-child(2) {
+        width: 250px;
+    }
+    .page__title {
+      font-size: 60px;
+      line-height: 50px;
+    }
+}
